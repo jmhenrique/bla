@@ -30,16 +30,12 @@ my $count;
 open(my $fh, '<:encoding(UTF-8)', $arquivo)  
 or die "Não foi possível abrir o arquivo '$arquivo' $!";
 chomp(@array = <$fh>);
-
-while( my $linha = <$fh>)  {   
-    print $linha;    
-#     last if $. == 2;
-}
+# 
+# while( my $linha = <$fh>)  {   
+#     print $linha;    
+# #     last if $. == 2;
+# }
 close $fh;
-
-print "li o arquivo. pronto\n"; 
-
-
 
 s/#0/ /g for @array;
 s/#/ /g for @array;
@@ -49,20 +45,16 @@ s/0([0-9])/$1/g for @array;
 
 #inicializa o vetor resposta
 foreach my $i (0..24) { $total25[$i]=0; } 
-
-foreach $aa (@array)
-{ 
-@d=split(' ',$aa);
-$count=0;
-foreach $elemento (@d)  
-{
-$total25[$elemento]++;
-$count ++ ;
-} 
+   foreach $aa (@array)  { 
+      @d=split(' ',$aa);
+      $count=0;
+      foreach $elemento (@d)  {
+         $total25[$elemento]++;
+         $count ++ ;
+         } 
 # print "=================\n";
-}
+    }
 
 $count=1;
 shift @total25 ; 
-foreach $ab (@total25)
-{ print "$count $ab\n" ; $count++} 
+foreach $ab (@total25) { print "$count $ab\n" ; $count++} 

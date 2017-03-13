@@ -30,16 +30,12 @@ my $count;
 open(my $fh, '<:encoding(UTF-8)', $arquivo)  
 or die "Não foi possível abrir o arquivo '$arquivo' $!";
 chomp(@array = <$fh>);
-
-while( my $linha = <$fh>)  {   
-    print $linha;    
-#     last if $. == 2;
-}
+# 
+# while( my $linha = <$fh>)  {   
+#     print $linha;    
+# #     last if $. == 2;
+# }
 close $fh;
-
-print "li o arquivo. pronto\n"; 
-
-
 
 s/#0/ /g for @array;
 s/#/ /g for @array;
