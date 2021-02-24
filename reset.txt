@@ -1,0 +1,48 @@
+
+
+i=buffer++
+count++
+
+ontime() {
+
+m4=m3
+m3=m2
+m2=m1
+m1=media
+m1=media/inputperiodo
+
+am4=angulo(m4,m3,inputperiodo);
+am3=angulo(m3,m2,inputperiodo);
+am2=angulo(m2,m1,inputperiodo);
+am1=angulo(m1,m0,inputperiodo);
+
+}
+
+
+
+angulo(double m1, double m2, int periodo) { 
+
+double a;
+m1=60 
+m2=120
+periodo=60
+
+((atan((m2-m1)/periodo))/M_PI)*180
+
+return a;
+
+}
+
+
+double da12=(am2-am1)/periodo;
+double da23=(am3-am2)/periodo;
+double da34=(am4-am3)/periodo;
+
+if ( da12 >= da23 && da34 >= 23 ) { sobe=true }
+if ( da12 <= da23 && da34 <= 23 ) { sobe=false }
+
+> > 
+< < 
+
+< > 
+> < 
